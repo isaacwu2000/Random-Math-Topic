@@ -221,9 +221,14 @@ list_of_math_topics = [
 import sys
 from random import choice
 
+try:
+    number_of_topics = int(sys.argv[1])
+except TypeError:
+    print("Please list the NUMBER of math topics you want as the command-line arguement after main.py.\nRead README.md for more information.")
+
 if len(sys.argv) == 2:
     # Prints out [second command-line arguement - the one after main.py] number of vectors
-    for i in range(sys.argv[1]):
+    for i in range(number_of_topics):
         print(choice(list_of_math_topics))
 else:
     print("Please list the number of math topics you want as the command-line arguement after main.py.\nRead README.md for more information.")
